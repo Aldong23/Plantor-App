@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.179" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/add_button.xml" value="0.179" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/arrow_right_button.xml" value="0.1715" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/arrowright_button.xml" value="0.1715" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/back_button.xml" value="0.179" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/black_cursor.xml" value="0.1715" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/buttonovall.xml" value="0.1595" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/circle_picture.xml" value="0.179" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/circle_shape.xml" value="0.179" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/circle_shape_image.xml" value="0.179" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/delete_icon.xml" value="0.1595" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/desingergrid.xml" value="0.1595" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/exit_button.xml" value="0.1595" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/gglistdesgin.xml" value="0.1595" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.179" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.1595" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/ic_launcher_background.xml" value="0.179" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/ic_launcher_iconmain_background.xml" value="0.142" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/infodetail.xml" value="0.1595" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/save_button.xml" value="0.1595" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/search_button.xml" value="0.179" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/shadow.xml" value="0.1595" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/shaperoundededge.xml" value="0.1595" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/spinner_icon.xml" value="0.157" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/font/font.xml" value="0.234375" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_add_plants.xml" value="0.2" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_add_reminder.xml" value="0.2" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_addplant.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_edit_plants.xml" value="0.17" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_front.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_main.xml" value="0.14" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_main_empty_plant.xml" value="0.18" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_main_plants.xml" value="0.18" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_notification_area.xml" value="0.16" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_show_plants.xml" value="0.18" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/circlephotoshape.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/drop_fertilizerlist.xml" value="0.12569444444444444" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/drop_list.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/drop_waterlist.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/dropdown_listmenu.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/dropdownlist_menu.xml" value="0.13541666666666666" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/droplistwatertimes.xml" value="0.1361111111111111" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/plantscontent.xml" value="0.21" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/row_add_cricketer.xml" value="0.18" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/showplantlayout.xml" value="0.25" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/menu/notificationarea.xml" value="0.17" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/menu/searchonly.xml" value="0.16" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1595" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1595" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

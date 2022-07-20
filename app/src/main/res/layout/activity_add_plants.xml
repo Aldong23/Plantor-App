@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F4E3"
+    tools:context=".addPlants">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-408dp">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="107dp"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/content_description_media"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/title_bar3" />
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="Add Plant"
+                    android:textColor="@color/white"
+                    android:textSize="26sp"
+                    android:layout_marginTop="58dp"
+                    android:layout_marginStart="73dp"/>
+
+                <ImageButton
+                    android:id="@+id/backButtonAddPlants"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="62dp"
+                    android:layout_marginStart="20dp"
+                    android:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/back_button" />
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <!-- Scrollable content -->
+
+            <RelativeLayout
+                android:id="@+id/plantInput"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/InputInsertPhoto"
+                    android:layout_width="129dp"
+                    android:layout_height="129dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="14dp"
+                    android:layout_marginTop="24dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+                    app:srcCompat="@drawable/photo_def2" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonAddPhotoCam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:layout_marginTop="66dp"
+                    app:srcCompat="@drawable/addphotocam_button"
+                    android:layout_toStartOf="@id/InputInsertPhoto" />
+
+                <ImageButton
+                    android:id="@+id/imageButtonAddPhotoGallery"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@android:color/transparent"
+                    android:layout_marginTop="66dp"
+                    app:srcCompat="@drawable/addphotogallery_button"
+                    android:layout_toEndOf="@id/InputInsertPhoto" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/InputNamePlants"
+                    android:layout_width="331dp"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/InputInsertPhoto"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="7dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:startIconDrawable="@drawable/name_icon"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="#046425"
+                    app:boxStrokeColor="#046425"
+                    app:helperTextEnabled="true"
+                    app:helperText="Caution: Not all plant can live in your country"
+                    app:helperTextTextColor="#F0C72B"
+                    android:hint="Name">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/plantName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textCursorDrawable="@drawable/black_cursor"
+                        android:inputType="text"
+                        android:singleLine="true"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/InputDateAdaption"
+                    android:layout_width="331dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@id/InputNamePlants"
+                    android:layout_marginBottom="14dp"
+                    app:startIconDrawable="@drawable/date_icon"
+                    app:endIconDrawable="@drawable/spinner_icon"
+                    app:endIconMode="custom"
+                    app:hintTextColor="#046425"
+                    app:boxStrokeColor="#046425"
+                    android:hint="Adoption Date"
+                    app:placeholderTextColor="#898989">
+
+                    <EditText
+                        android:id="@+id/InputDateAdaption1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="date"
+                        android:singleLine="true"
+                        android:focusableInTouchMode="true"
+                        android:cursorVisible="false"
+                        android:focusable="false"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/waterTimes"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignEnd="@id/InputDateAdaption"
+                    android:layout_below="@id/InputDateAdaption"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="14dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint="Times"
+                    app:hintTextColor="#046425"
+                    app:boxStrokeColor="#046425"
+                    app:endIconTint="#676767">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteWaterTimes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:singleLine="true"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/waterRepeat"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="189dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignStart="@id/InputDateAdaption"
+                    android:layout_below="@id/InputDateAdaption"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="14dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint="Water"
+                    app:placeholderText="repeat"
+                    app:startIconDrawable="@drawable/waterdrop_icon"
+                    app:hintTextColor="#046425"
+                    app:boxStrokeColor="#046425"
+                    app:endIconTint="#676767">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteWaterRepeat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:singleLine="true"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fertilizerTimes"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="135dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignEnd="@id/waterTimes"
+                    android:layout_below="@id/waterTimes"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="14dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint="Times"
+                    app:hintTextColor="#046425"
+                    app:boxStrokeColor="#046425"
+                    app:endIconTint="#676767">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteFertilizerTimes"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:singleLine="true"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/fertilizerRepeat"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.ExposedDropdownMenu"
+                    android:layout_width="189dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignStart="@id/waterRepeat"
+                    android:layout_below="@id/waterRepeat"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="14dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:hint="Fertilizer"
+                    app:placeholderText="repeat"
+                    app:startIconDrawable="@drawable/fertilizer_icon"
+                    app:hintTextColor="#046425"
+                    app:boxStrokeColor="#046425"
+                    app:endIconTint="#676767">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteFertilizerRepeat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:singleLine="true"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/InputLocation"
+                    android:layout_width="331dp"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/fertilizerTimes"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="14dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:startIconDrawable="@drawable/location_icon"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="#046425"
+                    app:boxStrokeColor="#046425"
+                    android:hint="Location">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/plantLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textCursorDrawable="@drawable/black_cursor"
+                        android:inputType="text"
+                        android:singleLine="true"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/InputDiscription"
+                    android:layout_width="331dp"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/InputLocation"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="14dp"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    app:startIconDrawable="@drawable/discription_icon"
+                    app:endIconMode="clear_text"
+                    app:hintTextColor="#046425"
+                    app:boxStrokeColor="#046425"
+                    android:hint="Description">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/plantDiscription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textCursorDrawable="@drawable/black_cursor"
+                        android:inputType="text"
+                        android:singleLine="true"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <View
+                    android:id="@+id/lineBreak1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginBottom="40dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/InputDiscription"
+                    android:background="#046425"/>
+
+                <TextView
+                    android:id="@+id/textViewNotification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Notification"
+                    android:layout_marginBottom="20dp"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/inter_regular"
+                    android:textColor="@color/black"
+                    android:layout_below="@id/lineBreak1"
+                    android:layout_alignLeft="@+id/InputDiscription"/>
+
+                <RelativeLayout
+                    android:id="@+id/NotifLayoutWater"
+                    android:layout_width="330dp"
+                    android:layout_height="57dp"
+                    android:layout_below="@+id/textViewNotification"
+                    android:layout_alignStart="@+id/textViewNotification"
+                    android:background="#E0E0E0"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="15dp">
+
+                    <ImageView
+                        android:id="@+id/iconNotif"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/notification_button" />
+
+                    <TextView
+                        android:id="@+id/notifRepeatW"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Water: "
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/iconNotif"
+                        android:layout_marginStart="20dp"/>
+                    <TextView
+                        android:id="@+id/setRepeatnotifW"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/inter_regular"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/notifRepeatW"
+                        android:layout_marginStart="2dp"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/notifCycleW"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cycle: "
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="212dp"/>
+                    <TextView
+                        android:id="@+id/setCyclenotifW"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/inter_regular"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/notifCycleW"
+                        android:layout_marginStart="2dp"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/daysW"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" day/s"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/inter_regular"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/setCyclenotifW"
+                        android:textSize="15sp"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/NotifLayoutFertilizer"
+                    android:layout_width="330dp"
+                    android:layout_height="57dp"
+                    android:layout_below="@+id/NotifLayoutWater"
+                    android:layout_alignStart="@+id/textViewNotification"
+                    android:background="#E0E0E0"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="100dp">
+
+                    <ImageView
+                        android:id="@+id/iconNotifF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="8dp"
+                        android:src="@drawable/notification_button" />
+
+                    <TextView
+                        android:id="@+id/notifRepeatF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fertilizer: "
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/iconNotifF"
+                        android:layout_marginStart="20dp"/>
+                    <TextView
+                        android:id="@+id/setRepeatnotifF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/inter_regular"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/notifRepeatF"
+                        android:layout_marginStart="2dp"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/notifCycleF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Cycle: "
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="212dp"/>
+                    <TextView
+                        android:id="@+id/setCyclenotifF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/inter_regular"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/notifCycleF"
+                        android:layout_marginStart="2dp"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/daysF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=" day/s"
+                        android:textColor="@color/black"
+                        android:fontFamily="@font/inter_regular"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/setCyclenotifF"
+                        android:textSize="15sp"/>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/saveAddButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/save_addButton"
+        app:icon="@drawable/save_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:backgroundTint="#A3D921"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

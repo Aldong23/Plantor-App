@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F4E3"
+    tools:context=".ShowPlants">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-408dp">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="152dp"
+            android:fitsSystemWindows="true">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@string/content_description_media"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/title_bar3" />
+
+                <com.google.android.material.appbar.MaterialToolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@android:color/transparent" />
+
+                <TextView
+                    android:id="@+id/plantTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/inter_semibold"
+                    android:text="My Plants"
+                    android:textColor="@color/white"
+                    android:textSize="26sp"
+                    android:layout_marginTop="100dp"
+                    android:layout_marginStart="73dp"/>
+
+                <ImageButton
+                    android:id="@+id/backButtonShowPlants"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="62dp"
+                    android:layout_marginStart="20dp"
+                    android:backgroundTint="@android:color/transparent"
+                    app:srcCompat="@drawable/back_button" />
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <!-- Scrollable content -->
+
+            <RelativeLayout
+                android:id="@+id/plantShadow"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shadow"
+                android:layout_margin="10dp"
+                android:paddingBottom="3dp"
+                android:paddingEnd="2dp"
+                android:paddingStart="2dp">
+
+                <RelativeLayout
+                    android:id="@+id/plantCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="10dp"
+                    android:background="@drawable/gglistdesgin">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/PlantphotoPass"
+                        android:layout_width="185dp"
+                        android:layout_height="185dp"
+                        android:layout_marginTop="6dp"
+                        android:layout_marginStart="6dp"
+                        android:adjustViewBounds="true"
+                        android:scaleType="centerCrop"
+                        app:shapeAppearanceOverlay="@style/roundedImageViewRounded"
+                        app:srcCompat="@drawable/photo_def2"/>
+
+                    <RelativeLayout
+                        android:id="@+id/forInfo"
+                        android:layout_alignParentEnd="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="146dp"
+                        android:background="@drawable/infodetail"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginStart="205dp">
+
+                        <ImageView
+                            android:id="@+id/waterDrop"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_marginTop="33dp"
+                            android:layout_marginStart="23dp"
+                            android:src="@drawable/waterdrop"/>
+
+                        <ImageView
+                            android:id="@+id/fertilizerDrop"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/fertilizerdrop"
+                            android:layout_marginTop="21dp"
+                            android:layout_alignLeft="@id/waterDrop"
+                            android:layout_below="@id/waterDrop"/>
+
+                        <TextView
+                            android:id="@+id/waterinfoTimes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/waterDrop"
+                            android:layout_alignTop="@id/waterDrop"
+                            android:text="3x"
+                            android:textSize="15sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/inter_bold"
+                            android:layout_marginTop="5dp"/>
+
+                        <TextView
+                            android:id="@+id/fertilizerinfoTimes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/fertilizerDrop"
+                            android:layout_alignTop="@id/fertilizerDrop"
+                            android:text="3x"
+                            android:textSize="15sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/inter_bold"
+                            android:layout_marginTop="5dp"/>
+
+                        <TextView
+                            android:id="@+id/waterinfoRepeat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/waterinfoTimes"
+                            android:layout_alignTop="@id/waterDrop"
+                            android:text="every2weeks"
+                            android:textSize="10sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginStart="8dp"/>
+
+                        <TextView
+                            android:id="@+id/fertilizrinfoRepeat"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@id/fertilizerinfoTimes"
+                            android:layout_alignTop="@id/fertilizerDrop"
+                            android:text="every2weeks"
+                            android:textSize="10sp"
+                            android:textColor="@color/white"
+                            android:fontFamily="@font/inter_regular"
+                            android:layout_marginTop="9dp"
+                            android:layout_marginStart="8dp"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/inLocation"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/PlantphotoPass"
+                        android:text="Location"
+                        android:textColor="@color/colorforInfo"
+                        android:fontFamily="@font/inter_regular"
+                        android:textAlignment="center"
+                        android:textSize="10sp"
+                        android:layout_marginStart="63dp"/>
+
+                    <TextView
+                        android:id="@+id/indescription"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/inLocation"
+                        android:layout_alignStart="@id/lineBreak2"
+                        android:text="Description"
+                        android:textColor="@color/colorforInfo"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="10sp"
+                        android:layout_marginTop="10dp"/>
+
+                    <View
+                        android:id="@+id/lineBreak2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="20dp"
+                        android:layout_below="@+id/indescription"
+                        android:background="@color/colorforInfo"/>
+
+                    <TextView
+                        android:id="@+id/statusIII"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/lineBreak2"
+                        android:layout_alignStart="@id/lineBreak2"
+                        android:text="Status"
+                        android:textColor="@color/colorforInfo"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textSize="12sp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="20dp"/>
+
+                    <Button
+                        android:id="@+id/infoWaterButton"
+                        android:layout_width="102dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/statusIII"
+                        android:layout_alignStart="@id/statusIII"
+                        android:textAllCaps="false"
+                        android:text="Water"
+                        android:textColor="@color/black"
+                        app:strokeWidth="3dp"
+                        app:strokeColor="#0E5994"
+                        app:cornerRadius="20dp"
+                        style="?attr/materialButtonOutlinedStyle" />
+
+                    <Button
+                        android:id="@+id/infoFertilizerButton"
+                        android:layout_width="102dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/infoWaterButton"
+                        android:layout_alignStart="@id/infoWaterButton"
+                        android:textAllCaps="false"
+                        android:text="Fertilizer"
+                        android:textColor="@color/black"
+                        app:strokeWidth="3dp"
+                        app:strokeColor="#664121"
+                        app:cornerRadius="20dp"
+                        style="?attr/materialButtonOutlinedStyle" />
+
+                    <TextView
+                        android:id="@+id/waterneed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignStart="@id/waterProgress"
+                        android:layout_alignTop="@id/infoWaterButton"
+                        android:textSize="12sp"
+                        android:text="need water"/>
+
+                    <TextView
+                        android:id="@+id/fertilizerneed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_alignStart="@id/fertilizerProgress"
+                        android:layout_alignTop="@id/infoFertilizerButton"
+                        android:textSize="12sp"
+                        android:text="need fertilizer"/>
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/waterProgress"
+                        android:layout_toEndOf="@id/infoWaterButton"
+                        android:layout_alignTop="@id/infoWaterButton"
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="22dp"
+                        android:layout_height="wrap_content"
+                        app:trackCornerRadius="100dp"
+                        app:indicatorColor="#0E5994"
+                        app:trackColor="#ACC8B5"/>
+
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/fertilizerProgress"
+                        android:layout_toEndOf="@id/infoFertilizerButton"
+                        android:layout_alignTop="@id/infoFertilizerButton"
+                        android:layout_width="match_parent"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_marginTop="22dp"
+                        android:layout_height="wrap_content"
+                        app:trackCornerRadius="100dp"
+                        app:indicatorColor="#664121"
+                        app:trackColor="#C3C297"/>
+
+                    <ImageButton
+                        android:id="@+id/deleteButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/delete_icon"
+                        android:layout_below="@id/fertilizerProgress"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="50dp"/>
+
+                    <ImageButton
+                        android:id="@+id/editButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/edit_button"
+                        android:layout_toStartOf="@id/deleteButton"
+                        android:layout_alignBottom="@id/deleteButton"
+                        android:layout_marginTop="50dp"/>
+
+                    <ImageButton
+                        android:id="@+id/notifSwitch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/infronotif_button"
+                        android:layout_toStartOf="@id/editButton"
+                        android:layout_alignBottom="@id/editButton"
+                        android:layout_marginTop="50dp"/>
+
+                    <ImageButton
+                        android:id="@+id/complete"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/check_button"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginTop="50dp"/>
+
+                    <ImageButton
+                        android:id="@+id/reset"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/reset_button"
+                        android:layout_toEndOf="@+id/complete"
+                        android:layout_alignBottom="@+id/notifSwitch"
+                        android:layout_marginTop="50dp"/>
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

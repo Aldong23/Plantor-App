@@ -166,5 +166,32 @@ public class NotificationArea extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+        TextView Wrepeat, Wtime, Frepeat, Ftime;
+        Wrepeat = findViewById(R.id.Wrepeat);
+        Wtime = findViewById(R.id.Wtime);
+        Frepeat = findViewById(R.id.Frepeat);
+        Ftime = findViewById(R.id.Ftime);
+        Wrepeat.setText(plants_WaterRepeat);
+        Frepeat.setText(plants_FertilizerRepeat);
+        if(plants_WaterTimes.equals("1x")){
+            Wtime.setText("water @6:00 AM");
+        }
+        if(plants_WaterTimes.equals("2x")){
+            Wtime.setText("water @6:00 AM, @5:00 PM");
+        }
+        if(plants_WaterTimes.equals("3x")){
+            Wtime.setText("water @6:00 AM, @12:00 AM, @5:00 PM");
+        }
+        if(plants_FertilizerTimes.equals("1x")){
+            Ftime.setText("water @6:00 AM");
+        }
+        if(plants_FertilizerTimes.equals("2x")){
+            Ftime.setText("water @6:00 AM, @5:00 PM");
+        }
+        if(plants_FertilizerTimes.equals("3x")){
+            Ftime.setText("water @6:00 AM, @12:00 AM, @5:00 PM");
+        }
+
     }
 }

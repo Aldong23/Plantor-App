@@ -13,6 +13,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -215,20 +216,26 @@ public class ShowPlants extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ShowPlants.this);
                 builder.setTitle(plants_Name)
-                        .setMessage("Complete All")
+                        .setMessage("Complete progress note")
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-                               waterProgress = 90;
-                                fertProgress = 90;
+                               waterProgress = 100;
+                                fertProgress = 100;
                                 WaterP.setProgress(waterProgress);
                                 FertelizerP.setProgress(fertProgress);
-                                WaterP.setMax(90);
-                                FertelizerP.setMax(90);
+                                WaterP.setMax(100);
+                                FertelizerP.setMax(100);
                                 waterV.setVisibility(View.INVISIBLE);
                                 fertV.setVisibility(View.INVISIBLE);
                                 plantsDB.updatefertilizerprogress(String.valueOf(plants_no), waterProgress);
                                 plantsDB.updatewaterprogress(String.valueOf(plants_no), fertProgress);
+                                reset.setVisibility(View.VISIBLE);
+                                reset.setImageResource(R.drawable.resetgreen_button);
+                                complete.setImageResource(R.drawable.complete_button);
+                                FertilizerProgress.setEnabled(false);
+                                WaterProgress.setEnabled(false);
+                                complete.setEnabled(false);
                             }
                         })
                         .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
@@ -246,8 +253,44 @@ public class ShowPlants extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(ShowPlants.this);
                 builder.setTitle(plants_Name)
-                        .setMessage("Reset All")
-                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        .setMessage("Reset progress note")
+                        .setPositiveButton("Water", new DialogInterface.OnClickListener() {
+                            @RequiresApi(api = Build.VERSION_CODES.O)
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                waterProgress = 0;
+                                WaterP.setProgress(waterProgress);
+                                WaterP.setMin(0);
+                                waterV.setVisibility(View.VISIBLE);
+                                plantsDB.updatewaterprogress(String.valueOf(plants_no), waterProgress);
+                                reset.setImageResource(R.drawable.reset_button);
+                                if (waterProgress == 0 && Integer.parseInt(fertilizerprogress) == 0) {
+                                    reset.setVisibility(View.INVISIBLE);
+                                }
+                                complete.setImageResource(R.drawable.check_button);
+                                WaterProgress.setEnabled(true);
+                                complete.setEnabled(true);
+                            }
+                        })
+                        .setNegativeButton("Fertilizer", new DialogInterface.OnClickListener() {
+                            @RequiresApi(api = Build.VERSION_CODES.O)
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                fertProgress = 0;
+                                FertelizerP.setProgress(fertProgress);
+                                FertelizerP.setMin(0);
+                                fertV.setVisibility(View.VISIBLE);
+                                plantsDB.updatefertilizerprogress(String.valueOf(plants_no), fertProgress);
+                                reset.setImageResource(R.drawable.reset_button);
+                                if (Integer.parseInt(waterprogress) == 0 && fertProgress == 0) {
+                                    reset.setVisibility(View.INVISIBLE);
+                                }
+                                complete.setImageResource(R.drawable.check_button);
+                                FertilizerProgress.setEnabled(true);
+                                complete.setEnabled(true);
+                            }
+                        })
+                        .setNeutralButton("All", new DialogInterface.OnClickListener() {
                             @RequiresApi(api = Build.VERSION_CODES.O)
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -261,12 +304,12 @@ public class ShowPlants extends AppCompatActivity {
                                 fertV.setVisibility(View.VISIBLE);
                                 plantsDB.updatefertilizerprogress(String.valueOf(plants_no), waterProgress);
                                 plantsDB.updatewaterprogress(String.valueOf(plants_no), fertProgress);
-                            }
-                        })
-                        .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
+                                reset.setImageResource(R.drawable.reset_button);
+                                reset.setVisibility(View.INVISIBLE);
+                                complete.setImageResource(R.drawable.check_button);
+                                FertilizerProgress.setEnabled(true);
+                                WaterProgress.setEnabled(true);
+                                complete.setEnabled(true);
                             }
                         });
                 builder.create().show();
@@ -275,52 +318,39 @@ public class ShowPlants extends AppCompatActivity {
 
         if (Integer.parseInt(waterprogress) == 0) {
             waterV.setVisibility(View.VISIBLE);
+            reset.setVisibility(View.INVISIBLE);
+
         }else{
             waterV.setVisibility(View.INVISIBLE);
         }
+        if (Integer.parseInt(waterprogress) <= 99) {
+            WaterProgress.setEnabled(true);
+        }else{
+            WaterProgress.setEnabled(false);
+        }
+        if (Integer.parseInt(fertilizerprogress) <= 99) {
+            FertilizerProgress.setEnabled(true);
+        }else{
+            FertilizerProgress.setEnabled(false);
+        }
         if (Integer.parseInt(fertilizerprogress) == 0) {
             fertV.setVisibility(View.VISIBLE);
+            reset.setVisibility(View.INVISIBLE);
         }else{
             fertV.setVisibility(View.INVISIBLE);
         }
-
-
-        if(Integer.parseInt(waterprogress) >= 90){
-            CountDownTimer countDownTimer = new CountDownTimer(90000, 1000) {
-                @RequiresApi(api = Build.VERSION_CODES.O)
-                @Override
-                public void onTick(long millisUntilFinished) {
-                    waterProgress = waterProgress - 1;
-                    WaterP.setProgress(waterProgress);
-                    WaterP.setMin(0);
-                    plantsDB.updatewaterprogress(String.valueOf(plants_no), waterProgress);
-                }
-
-                @Override
-                public void onFinish() {
-                    waterProgress = 0;
-                    plantsDB.updatewaterprogress(String.valueOf(plants_no), waterProgress);
-                }
-            }.start();
+        if (waterProgress >= 100 && fertProgress >=100) {
+            reset.setVisibility(View.VISIBLE);
+            complete.setImageResource(R.drawable.complete_button);
+            reset.setImageResource(R.drawable.resetgreen_button);
+            complete.setEnabled(false);
         }
-
-        if(Integer.parseInt(fertilizerprogress) >= 90){
-            CountDownTimer countDownTimer = new CountDownTimer(604800000, 6720000) {
-                @RequiresApi(api = Build.VERSION_CODES.O)
-                @Override
-                public void onTick(long millisUntilFinished) {
-                    fertProgress = fertProgress - 1;
-                    FertelizerP.setProgress(fertProgress);
-                    FertelizerP.setMin(0);
-                    plantsDB.updatefertilizerprogress(String.valueOf(plants_no), fertProgress);
-                }
-
-                @Override
-                public void onFinish() {
-                    fertProgress = 0;
-                    plantsDB.updatefertilizerprogress(String.valueOf(plants_no), fertProgress);
-                }
-            }.start();
+        if (Integer.parseInt(waterprogress) >= 1 || Integer.parseInt(fertilizerprogress) >=1) {
+            reset.setVisibility(View.VISIBLE);
+        }
+        if (Integer.parseInt(waterprogress) <= 99 || Integer.parseInt(fertilizerprogress) <=99) {
+            complete.setImageResource(R.drawable.check_button);
+            complete.setEnabled(true);
         }
 
         WaterProgress.setOnClickListener(new View.OnClickListener() {
@@ -333,25 +363,37 @@ public class ShowPlants extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 if(plants_WaterTimes.equals("1x")){
-                                    waterProgress = waterProgress + 90;
+                                    waterProgress = waterProgress + 100;
                                     WaterP.setProgress(waterProgress);
-                                    WaterP.setMax(90);
+                                    WaterP.setMax(100);
                                     plantsDB.updatewaterprogress(String.valueOf(plants_no), waterProgress);
                                     waterV.setVisibility(View.INVISIBLE);
+                                    reset.setVisibility(View.VISIBLE);
                                 }
                                 if(plants_WaterTimes.equals("2x")){
-                                    waterProgress = waterProgress + 45;
+                                    waterProgress = waterProgress + 50;
                                     WaterP.setProgress(waterProgress);
-                                    WaterP.setMax(90);
+                                    WaterP.setMax(100);
                                     plantsDB.updatewaterprogress(String.valueOf(plants_no), waterProgress);
                                     waterV.setVisibility(View.INVISIBLE);
+                                    reset.setVisibility(View.VISIBLE);
                                 }
                                 if(plants_WaterTimes.equals("3x")){
-                                    waterProgress = waterProgress + 30;
+                                    waterProgress = waterProgress + 34;
                                     WaterP.setProgress(waterProgress);
-                                    WaterP.setMax(90);
+                                    WaterP.setMax(100);
                                     plantsDB.updatewaterprogress(String.valueOf(plants_no), waterProgress);
                                     waterV.setVisibility(View.INVISIBLE);
+                                    reset.setVisibility(View.VISIBLE);
+                                }
+                                if (waterProgress >= 100 && fertProgress >=100) {
+                                    reset.setVisibility(View.VISIBLE);
+                                    reset.setImageResource(R.drawable.resetgreen_button);
+                                    complete.setImageResource(R.drawable.complete_button);
+                                    complete.setEnabled(false);
+                                }
+                                if (waterProgress >= 100 ) {
+                                    WaterProgress.setEnabled(false);
                                 }
                             }
                         })
@@ -376,27 +418,39 @@ public class ShowPlants extends AppCompatActivity {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 if(plants_FertilizerTimes.equals("1x")){
-                                    fertProgress = fertProgress + 90;
+                                    fertProgress = fertProgress + 100;
                                     FertelizerP.setProgress(fertProgress);
-                                    FertelizerP.setMax(90);
+                                    FertelizerP.setMax(100);
                                     plantsDB.updatefertilizerprogress(String.valueOf(plants_no), fertProgress);
                                     fertV.setVisibility(View.INVISIBLE);
+                                    reset.setVisibility(View.VISIBLE);
+
                                 }
                                 if(plants_FertilizerTimes.equals("2x")){
-                                    fertProgress = fertProgress + 45;
+                                    fertProgress = fertProgress + 50;
                                     FertelizerP.setProgress(fertProgress);
-                                    FertelizerP.setMax(90);
+                                    FertelizerP.setMax(100);
                                     plantsDB.updatefertilizerprogress(String.valueOf(plants_no), fertProgress);
                                     fertV.setVisibility(View.INVISIBLE);
+                                    reset.setVisibility(View.VISIBLE);
                                 }
                                 if(plants_FertilizerTimes.equals("3x")){
-                                    fertProgress = fertProgress + 30;
+                                    fertProgress = fertProgress + 34;
                                     FertelizerP.setProgress(fertProgress);
-                                    FertelizerP.setMax(90);
+                                    FertelizerP.setMax(100);
                                     plantsDB.updatefertilizerprogress(String.valueOf(plants_no), fertProgress);
                                     fertV.setVisibility(View.INVISIBLE);
+                                    reset.setVisibility(View.VISIBLE);
                                 }
-
+                                if (waterProgress >= 100 && fertProgress >=100) {
+                                    reset.setVisibility(View.VISIBLE);
+                                    reset.setImageResource(R.drawable.resetgreen_button);
+                                    complete.setImageResource(R.drawable.complete_button);
+                                    complete.setEnabled(false);
+                                }
+                                if (fertProgress >= 100 ) {
+                                    FertilizerProgress.setEnabled(false);
+                                }
 
                             }
                         })

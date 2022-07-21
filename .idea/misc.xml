@@ -13,6 +13,7 @@
         <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/circle_picture.xml" value="0.179" />
         <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/circle_shape.xml" value="0.179" />
         <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/circle_shape_image.xml" value="0.179" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/complete_button.xml" value="0.1635" />
         <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/delete_icon.xml" value="0.1595" />
         <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/desingergrid.xml" value="0.1595" />
         <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/drawable/exit_button.xml" value="0.1595" />
@@ -36,7 +37,7 @@
         <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_main.xml" value="0.14" />
         <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_main_empty_plant.xml" value="0.18" />
         <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_main_plants.xml" value="0.18" />
-        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_notification_area.xml" value="0.16" />
+        <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_notification_area.xml" value="0.2" />
         <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/activity_show_plants.xml" value="0.18" />
         <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/circlephotoshape.xml" value="0.1361111111111111" />
         <entry key="..\:/Users/Aldss/AndroidStudioProjects/Plantor/app/src/main/res/layout/drop_fertilizerlist.xml" value="0.12569444444444444" />

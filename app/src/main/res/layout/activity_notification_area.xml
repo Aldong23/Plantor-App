@@ -98,17 +98,91 @@
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"/>
 
+                    <TextView
+                        android:id="@+id/waterNNN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Water: "
+                        android:textColor="@color/black"
+                        android:layout_below="@id/AAdate"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="15sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"/>
+
+                    <TextView
+                        android:id="@+id/Wrepeat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Every 2weeks"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/waterNNN"
+                        android:layout_alignTop="@id/waterNNN"
+                        android:layout_alignStart="@id/Frepeat"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="15sp"
+                        android:layout_marginStart="1dp" />
+
+                    <TextView
+                        android:id="@+id/Wtime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="time"
+                        android:textColor="@color/black"
+                        android:layout_below="@id/Wrepeat"
+                        android:layout_alignStart="@id/Wrepeat"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="15sp"/>
+
+                    <TextView
+                        android:id="@+id/fertNNN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fertilizer: "
+                        android:textColor="@color/black"
+                        android:layout_below="@id/Wtime"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="15sp"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="20dp"/>
+
+                    <TextView
+                        android:id="@+id/Frepeat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Every 2weeks"
+                        android:textColor="@color/black"
+                        android:layout_toEndOf="@id/fertNNN"
+                        android:layout_alignTop="@id/fertNNN"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="15sp"
+                        android:layout_marginStart="10dp" />
+
+                    <TextView
+                        android:id="@+id/Ftime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="time"
+                        android:textColor="@color/black"
+                        android:layout_below="@id/Frepeat"
+                        android:layout_alignStart="@id/Frepeat"
+                        android:fontFamily="@font/inter_regular"
+                        android:textSize="15sp"/>
+
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/Water"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_below="@id/AAdate"
+                        android:layout_below="@id/fertNNN"
                         android:layout_alignStart="@id/AAdate"
                         android:checked="false"
                         android:layout_marginTop="50dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginEnd="20dp"
-                        android:text="Water"/>
+                        android:text="Water"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textColor="@color/GreenInfoColor"
+                        android:textSize="20sp"/>
 
                     <com.google.android.material.switchmaterial.SwitchMaterial
                         android:id="@+id/Fertilizer"
@@ -119,7 +193,10 @@
                         android:checked="false"
                         android:layout_marginTop="5dp"
                         android:layout_marginEnd="20dp"
-                        android:text="Fertilizer"/>
+                        android:text="Fertilizer"
+                        android:fontFamily="@font/inter_semibold"
+                        android:textColor="@color/GreenInfoColor"
+                        android:textSize="20sp"/>
 
                 </RelativeLayout>
 

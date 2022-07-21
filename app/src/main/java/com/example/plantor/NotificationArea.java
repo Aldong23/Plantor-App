@@ -101,6 +101,10 @@ public class NotificationArea extends AppCompatActivity {
 //                    alarmManager.setExact(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), pendingIntent);
                 }else{
                     plantsDB.updatewaterswitch(String.valueOf(plants_no), "false");
+                    Intent intent = new Intent(NotificationArea.this, NotificationReciever.class);
+                    PendingIntent sender = PendingIntent.getBroadcast(getApplicationContext(), 1, intent, 0);
+                    AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                    alarmManager.cancel(sender);
                 }
 
             }
@@ -125,6 +129,10 @@ public class NotificationArea extends AppCompatActivity {
                     alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY,pendingIntent);
                 }else{
                     plantsDB.updatefertilizerswitch(String.valueOf(plants_no), "false");
+                    Intent intent = new Intent(NotificationArea.this, NotificationReciever1.class);
+                    PendingIntent sender = PendingIntent.getBroadcast(getApplicationContext(), 1, intent, 0);
+                    AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+                    alarmManager.cancel(sender);
                 }
 
             }

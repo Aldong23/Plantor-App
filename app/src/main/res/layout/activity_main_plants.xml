@@ -43,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/inter_semibold"
-            android:text="My Plants"
+            android:text="My Plant"
             android:textColor="@color/white"
             android:textSize="26sp"
             android:layout_marginTop="100dp"
